@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
-    public List<Transform> tileList = new List<Transform>();
+    public List<TileScript> tileList = new List<TileScript>();
 
     public Vector3 offset;
 
@@ -49,10 +50,37 @@ public class GameController : MonoBehaviour
         return new Vector3(h, 0, v);
     }
 
+    public TileScript.TileType CheckTile(Vector3 pos, out TileScript tileScript)
+    {
+        foreach (var tile in tileList)
+        {
+            if (tile.transform.position == Utility.NearestVector(pos + offset))
+            {
+                tileScript = tile;
+                return tile.tileType;
+            }
+        }
+
+        tileScript = null;
+        return TileScript.TileType.Normal;
+    }
+
+    public TileScript.TileType CheckTile(Vector3 pos)
+    {
+        foreach (var tile in tileList)
+        {
+            if (tile.transform.position == Utility.NearestVector(pos + offset))
+            {
+                return tile.tileType;
+            }
+        }
+
+        return TileScript.TileType.Normal;
+    }
 
     private void Update()
     {
-        if(!ArePlayersReady())
+        if (!ArePlayersReady())
         {
             return;
         }
@@ -69,13 +97,20 @@ public class GameController : MonoBehaviour
 
             if (!IsThereGround(dir + player.transform.position))
             {
-                //ground ma shi wu
-                continue;
+                continue; // normal ground
+
+
             }
             else
             {
+
                 player.isMoving = true;
                 player.dist = dir + player.transform.position;
+                if (CheckTile(dir + player.transform.position) == TileScript.TileType.Pit)
+                {
+                    Debug.Log("GameOver");
+                }
+
             }
         }
     }

@@ -48,8 +48,12 @@ public class PlayerScript : MonoBehaviour
         if(isMoving)
         {
             MoveDist(transform, dist);
-        }
 
+        }
+        else
+        {
+          
+        }
 
     }
 
@@ -62,6 +66,14 @@ public class PlayerScript : MonoBehaviour
 
         if (Vector3.Distance(_transform.position, _dist) < 0.01f)
         {
+            TileScript tileScript;
+
+            if (GameController.instance.CheckTile(Utility.NearestVector(transform.position), out tileScript) == TileScript.TileType.Conveyor)
+            {
+                dist = Utility.NearestVector(transform.position + tileScript.ConveyorDir());
+                return;
+            }
+
             _transform.position = Utility.NearestVector(_transform.position);
             isMoving = false;
         }
