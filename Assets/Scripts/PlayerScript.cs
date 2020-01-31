@@ -5,12 +5,11 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public bool isRightPlayer = false;
-    float speed = 5f;
 
     public bool isMoving = false;
     
-    Vector3 dist;
-    Vector3 dir;
+    public Vector3 dist;    
+
     private void Start()
     {
         dist = transform.position;
@@ -18,46 +17,44 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        if (isMoving)
+        //if (isMoving)
+        //{
+        //    MoveDist(transform, dist);
+        //}        
+        //else if(GameController.instance.ArePlayersReady())
+        //{           
+        //    dir = InputController();
+        //}
+
+        //if (isRightPlayer)
+        //{
+        //    dir.x *= -1f;
+        //}
+
+        //if (dir.magnitude >0 && GameController.instance.IsThereGround(Utility.NearestVector(transform.position + dir)))
+        //{
+        //    isMoving = true;
+        //}               
+        //else 
+        //{            
+        //    return;
+        //}
+
+
+
+        //dist = transform.position + dir;
+        //dir = Vector3.zero;
+
+        if(isMoving)
         {
             MoveDist(transform, dist);
-        }        
-        else 
-        {           
-            dir = InputController();
         }
 
-        if (isRightPlayer)
-        {
-            dir.x *= -1f;
-        }
-
-        if (dir.magnitude >0 && GameController.instance.IsThereGround(Utility.NearestVector(transform.position + dir)))
-        {
-            isMoving = true;
-        }               
-        else 
-        {            
-            return;
-        }
-
-       
-
-        dist = transform.position + dir;
-        dir = Vector3.zero;
 
     }
 
 
-    Vector3 InputController()
-    {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-
-        if (h != 0) v = 0;
-
-        return new Vector3(h, 0, v);
-    }
+  
 
     void MoveDist(Transform _transform, Vector3 _dist )
     {
