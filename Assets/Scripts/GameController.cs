@@ -175,10 +175,15 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                isPlayerTurn = false;
+                if(CheckTile(curDir + player.transform.position) == TileScript.TileType.Barrier)
+                {
+                    continue;
+                }                
 
+                isPlayerTurn = false;
                 player.isMoving = true;
                 player.dist = curDir + player.transform.position;
+
                 if (CheckTile(curDir + player.transform.position) == TileScript.TileType.Pit)
                 {
                     isGameOver = true;
@@ -188,6 +193,12 @@ public class GameController : MonoBehaviour
                 {
                     player.IsFinished = true;
                     Debug.Log( player.name + " Reached");
+                }
+                else if(CheckTile((curDir + player.transform.position),out TileScript tileScript) == TileScript.TileType.Switch)
+                {
+                    Debug.Log("SwitchNinn");
+                    tileScript.ClearSwitch();
+                    tileScript.switchedTile.ClearBarrier();
                 }
 
             }
