@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MyBox;
 
-
+[ExecuteInEditMode]
 public class TileScript : MonoBehaviour
 {
     public enum TileType { Normal, Pit, Conveyor, Goal, Switch, Barrier }
@@ -31,16 +31,30 @@ public class TileScript : MonoBehaviour
 
     private void Start()
     {
-        GameController.instance.tileList.Add(this);
+        if(GameController.instance != null)
+        {
+            GameController.instance.tileList.Add(this);
+        }
+        
 
         if (tileType == TileType.Barrier)
-            barrierObj = Instantiate(barrierObj, transform.position + Vector3.up,Quaternion.identity);
+        {
+            barrierObj = Instantiate(barrierObj, transform.position + Vector3.up, Quaternion.identity);
+            barrierObj.transform.SetParent ( transform);
+        }
+            
         else if (tileType == TileType.Switch)
-            switchObj = Instantiate(switchObj, transform.position + Vector3.up/2, Quaternion.identity);
+        {
+            switchObj = Instantiate(switchObj, transform.position + Vector3.up / 2, Quaternion.identity);
+            switchObj.transform.SetParent(transform);
+        }
+            
         else if (tileType == TileType.Conveyor)
         {
             arrowObj = Instantiate(arrowObj, transform.position + Vector3.up, Quaternion.identity);
-            if(direction == Direction.Right)
+            arrowObj.transform.SetParent(transform);
+
+            if (direction == Direction.Right)
             {
                 arrowObj.transform.forward = Vector3.right;
             }
@@ -58,6 +72,13 @@ public class TileScript : MonoBehaviour
             Debug.Log(name);
             GetComponent<Renderer>().material = goalMaterial;
             
+        }
+        else if(tileType == TileType.Normal)
+        {
+            if(transform.childCount >0)
+            {
+                Destroy(transform.GetChild(0).gameObject);
+            }
         }
     }
 
