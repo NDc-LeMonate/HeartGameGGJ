@@ -17,13 +17,14 @@ public class GameController : MonoBehaviour
 
     Vector3 dir;
     public bool isGameOver = false;
-
+    public Material skyboxMat;
 
    public bool isPlayerTurn = true;
 
     private void Awake()
     {
         instance = this;
+        RenderSettings.skybox = skyboxMat;
 
         players = FindObjectsOfType<PlayerScript>();
 

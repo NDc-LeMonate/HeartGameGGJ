@@ -37,6 +37,8 @@ public class TileScript : MonoBehaviour
         }
         
 
+        if (transform.childCount > 0) return;
+
         if (tileType == TileType.Barrier)
         {
             barrierObj = Instantiate(barrierObj, transform.position + Vector3.up, Quaternion.identity);

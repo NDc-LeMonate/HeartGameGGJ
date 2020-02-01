@@ -963,6 +963,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor Tile (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 5506191212612538549, guid: 63e7c90f458ac4abdb15c9f9ae6cdeeb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9efb139965ec748748b963b774ce8a3b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63e7c90f458ac4abdb15c9f9ae6cdeeb, type: 3}
 --- !u!4 &840036075 stripped
@@ -1153,6 +1158,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor Tile (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 5506191212612538549, guid: 63e7c90f458ac4abdb15c9f9ae6cdeeb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9efb139965ec748748b963b774ce8a3b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63e7c90f458ac4abdb15c9f9ae6cdeeb, type: 3}
 --- !u!4 &985267483 stripped
