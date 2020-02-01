@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
             }
 
         }
-        else
+        else if (patrolType == PatrolType.Incremental)
         {
             index = (index + 1) % patrolPoints.Length;
 

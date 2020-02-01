@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     PlayerScript[] players = new PlayerScript[2];
 
     Vector3 dir;
-    bool isGameOver = false;
+    public bool isGameOver = false;
 
 
    public bool isPlayerTurn = true;

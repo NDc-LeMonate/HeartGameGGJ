@@ -47,6 +47,7 @@ public class PlayerScript : MonoBehaviour
         //dist = transform.position + dir;
         //dir = Vector3.zero;
 
+
         if(isMoving)
         {
             MoveDist(dist);

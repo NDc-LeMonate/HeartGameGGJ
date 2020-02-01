@@ -14,6 +14,8 @@ public class TileScript : MonoBehaviour
 
     [ConditionalField(nameof(tileType), false, TileType.Conveyor)]
     public Direction direction;
+    [ConditionalField(nameof(tileType), false, TileType.Conveyor)]
+    public GameObject arrowObj;
 
     [ConditionalField(nameof(tileType), false, TileType.Barrier)]
     public GameObject barrierObj;
@@ -23,16 +25,40 @@ public class TileScript : MonoBehaviour
     [ConditionalField(nameof(tileType), false, TileType.Switch)]
     public TileScript switchedTile;
 
+    [ConditionalField(nameof(tileType), false, TileType.Goal)]
+    public Material goalMaterial;
+
+
     private void Start()
     {
         GameController.instance.tileList.Add(this);
 
         if (tileType == TileType.Barrier)
             barrierObj = Instantiate(barrierObj, transform.position + Vector3.up,Quaternion.identity);
-        if (tileType == TileType.Switch)
+        else if (tileType == TileType.Switch)
             switchObj = Instantiate(switchObj, transform.position + Vector3.up/2, Quaternion.identity);
-
-
+        else if (tileType == TileType.Conveyor)
+        {
+            arrowObj = Instantiate(arrowObj, transform.position + Vector3.up, Quaternion.identity);
+            if(direction == Direction.Right)
+            {
+                arrowObj.transform.forward = Vector3.right;
+            }
+            else if (direction == Direction.Down)
+            {
+                arrowObj.transform.forward = -Vector3.forward;
+            }
+            else if (direction == Direction.Left)
+            {
+                arrowObj.transform.forward = -Vector3.right;
+            }
+        }
+        else if (tileType == TileType.Goal)
+        {
+            Debug.Log(name);
+            GetComponent<Renderer>().material = goalMaterial;
+            
+        }
     }
 
 
