@@ -7,7 +7,9 @@ public class PlayerScript : MonoBehaviour
     public bool isRightPlayer = false;
 
     public bool isMoving = false;
-    
+    public bool IsFinished = false;
+
+
     public Vector3 dist;    
 
     private void Start()
@@ -47,34 +49,29 @@ public class PlayerScript : MonoBehaviour
 
         if(isMoving)
         {
-            MoveDist(transform, dist);
-
-        }
-        else
-        {
-          
-        }
+            MoveDist(dist);
+        }        
 
     }
 
 
   
 
-    void MoveDist(Transform _transform, Vector3 _dist )
+    void MoveDist(Vector3 _dist )
     {
-        _transform.position = Vector3.Lerp(_transform.position, _dist, 5 * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, _dist, 5 * Time.deltaTime);
 
-        if (Vector3.Distance(_transform.position, _dist) < 0.01f)
+        if (Vector3.Distance(transform.position, _dist) < 0.01f)
         {
             TileScript tileScript;
 
-            if (GameController.instance.CheckTile(Utility.NearestVector(transform.position), out tileScript) == TileScript.TileType.Conveyor)
+            if (GameController.instance.CheckTile(Utility.NearestVector(base.transform.position), out tileScript) == TileScript.TileType.Conveyor)
             {
-                dist = Utility.NearestVector(transform.position + tileScript.ConveyorDir());
+                dist = Utility.NearestVector(base.transform.position + tileScript.ConveyorDir());
                 return;
             }
 
-            _transform.position = Utility.NearestVector(_transform.position);
+            transform.position = Utility.NearestVector(transform.position);
             isMoving = false;
         }
 

@@ -6,7 +6,7 @@ using MyBox;
 
 public class TileScript : MonoBehaviour
 {
-    public enum TileType { Normal, Pit, Conveyor }
+    public enum TileType { Normal, Pit, Conveyor , Goal}
     public enum Direction { Up, Down, Left, Right }
 
     public TileType tileType;
