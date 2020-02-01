@@ -21,18 +21,19 @@ public class GameController : MonoBehaviour
 
    public bool isPlayerTurn = true;
 
+    float skyboxRotateRandomSeed = 0;
+
     private void Awake()
     {
         instance = this;
         RenderSettings.skybox = skyboxMat;
 
         players = FindObjectsOfType<PlayerScript>();
-
+        skyboxRotateRandomSeed = Random.Range(0, 100);
     }
 
     public bool IsThereGround(Vector3 pos)
     {
-
         foreach (var tile in tileList)
         {
             if (tile.transform.position == (pos + offset))
@@ -96,6 +97,12 @@ public class GameController : MonoBehaviour
         }
 
         return TileScript.TileType.Normal;
+    }
+
+    private void FixedUpdate()
+    {
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time + skyboxRotateRandomSeed);
+
     }
 
     private void Update()

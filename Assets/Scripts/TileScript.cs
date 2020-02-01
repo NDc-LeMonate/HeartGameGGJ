@@ -14,8 +14,7 @@ public class TileScript : MonoBehaviour
 
     [ConditionalField(nameof(tileType), false, TileType.Conveyor)]
     public Direction direction;
-    [ConditionalField(nameof(tileType), false, TileType.Conveyor)]
-    public GameObject arrowObj;
+
 
     [ConditionalField(nameof(tileType), false, TileType.Barrier)]
     public GameObject barrierObj;
@@ -25,9 +24,8 @@ public class TileScript : MonoBehaviour
     [ConditionalField(nameof(tileType), false, TileType.Switch)]
     public TileScript switchedTile;
 
-    [ConditionalField(nameof(tileType), false, TileType.Goal)]
     public Material goalMaterial;
-
+    public GameObject arrowObj;
 
     private void Start()
     {
