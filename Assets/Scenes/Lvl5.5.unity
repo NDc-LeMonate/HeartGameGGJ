@@ -38,11 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-<<<<<<< HEAD:Assets/Scenes/Lvl5.5.unity
   m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
-=======
-  m_IndirectSpecularColor: {r: 0.14651188, g: 0.15272465, b: 0.1795648, a: 1}
->>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02:Assets/Scenes/Level 6.unity
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -993,11 +989,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor Tile (18)
       objectReference: {fileID: 0}
-    - target: {fileID: 5506191212612538549, guid: 63e7c90f458ac4abdb15c9f9ae6cdeeb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9efb139965ec748748b963b774ce8a3b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63e7c90f458ac4abdb15c9f9ae6cdeeb, type: 3}
 --- !u!4 &569179398 stripped
@@ -1172,11 +1163,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor Tile
       objectReference: {fileID: 0}
-    - target: {fileID: 5506191212612538549, guid: 63e7c90f458ac4abdb15c9f9ae6cdeeb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9efb139965ec748748b963b774ce8a3b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63e7c90f458ac4abdb15c9f9ae6cdeeb, type: 3}
 --- !u!4 &681053073 stripped

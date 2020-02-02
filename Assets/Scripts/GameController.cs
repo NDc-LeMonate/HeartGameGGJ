@@ -20,18 +20,14 @@ public class GameController : MonoBehaviour
     Vector3 dir;
 
     public bool isGameOver = false;
-<<<<<<< HEAD
     public bool gameOverActivated = false;
 
-=======
->>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
     public Material skyboxMat;
 
    public bool isPlayerTurn = true;
 
     float skyboxRotateRandomSeed = 0;
 
-<<<<<<< HEAD
     public bool isLevelFinished = false;
     public bool levelFinishedActivated = false;
 
@@ -39,8 +35,6 @@ public class GameController : MonoBehaviour
 
     public AudioSource auscFX, auscBG;
 
-=======
->>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
     private void Awake()
     {
         instance = this;
@@ -48,14 +42,11 @@ public class GameController : MonoBehaviour
 
         players = FindObjectsOfType<PlayerScript>();
         skyboxRotateRandomSeed = Random.Range(0, 100);
-<<<<<<< HEAD
         Instantiate(cameraControl, transform.position, Quaternion.identity);
         Instantiate(canvasPrefab);
         Instantiate(eventSystemPrefab);
 
 
-=======
->>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
     }
 
     public bool IsThereGround(Vector3 pos)
@@ -131,7 +122,6 @@ public class GameController : MonoBehaviour
 
     }
 
-<<<<<<< HEAD
     IEnumerator ProceedLevel()
     {
         yield return new WaitForSeconds(8);
@@ -146,8 +136,6 @@ public class GameController : MonoBehaviour
         }
     }
 
-=======
->>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
     private void Update()
     {
 

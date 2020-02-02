@@ -48,7 +48,6 @@ public class PlayerScript : MonoBehaviour
 
         //dist = transform.position + dir;
         //dir = Vector3.zero;
-<<<<<<< HEAD
         if(GameController.instance.isLevelFinished)
         {
           //  anim.SetTrigger("Dance");
@@ -58,10 +57,6 @@ public class PlayerScript : MonoBehaviour
             anim.SetBool("IsMoving", isMoving);
         }
         
-=======
-
-        GetComponentInChildren<Animator>().SetBool("IsMoving", isMoving);
->>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
         if(isMoving)
         {
             MoveDist(dist);
@@ -77,11 +72,7 @@ public class PlayerScript : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, _dist, Time.deltaTime * 3);
         //transform.position = Vector3.Lerp(transform.position, _dist, 10 * Time.deltaTime);
         Vector3 dir = _dist - transform.position;
-<<<<<<< HEAD
         if ( Vector3.SqrMagnitude (dir) != 0 && !GameController.instance.isLevelFinished)
-=======
-        if ( Vector3.SqrMagnitude (dir) != 0)
->>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
             transform.forward = dir;
 
         if (Vector3.Distance(transform.position, _dist) < 0.01f)

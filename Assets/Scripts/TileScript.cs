@@ -13,13 +13,8 @@ public class TileScript : MonoBehaviour
 
 
     [ConditionalField(nameof(tileType), false, TileType.Conveyor)]
-<<<<<<< HEAD
     public Direction direction;
 
-=======
-    public Direction direction;
-
->>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
 
     [ConditionalField(nameof(tileType), false, TileType.Barrier)]
     public GameObject barrierObj;
@@ -29,17 +24,12 @@ public class TileScript : MonoBehaviour
     [ConditionalField(nameof(tileType), false, TileType.Switch)]
     public TileScript switchedTile;
 
-<<<<<<< HEAD
     
     public Material goalMaterial;
     public GameObject arrowObj;
     public ParticleSystem barrierExplodeFX;
     public ParticleSystem switchFX;
     public GameObject pitObj;
-=======
-    public Material goalMaterial;
-    public GameObject arrowObj;
->>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
 
     private void Start()
     {
@@ -55,8 +45,6 @@ public class TileScript : MonoBehaviour
                 Destroy(transform.GetChild(0).gameObject);
             }
         }
-
-        if (transform.childCount > 0) return;
 
         if (tileType == TileType.Barrier)
         {
