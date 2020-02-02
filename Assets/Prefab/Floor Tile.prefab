@@ -100,7 +100,10 @@ MonoBehaviour:
   switchedTile: {fileID: 0}
   goalMaterial: {fileID: 2100000, guid: 9efb139965ec748748b963b774ce8a3b, type: 2}
   arrowObj: {fileID: 412250049055231154, guid: c858b9c4ce34e4c12ae915df41eb93f2, type: 3}
+<<<<<<< HEAD
   barrierExplodeFX: {fileID: 6985778128492859415, guid: 380702a9485bca140a5f960bcd242e4c,
     type: 3}
   switchFX: {fileID: 346873069259985736, guid: 850dcfc632847f2429302799a9eb0d7e, type: 3}
   pitObj: {fileID: 4303474829140080002, guid: 53c92f4ceeb11a94da6e95c5fc5dca58, type: 3}
+=======
+>>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02

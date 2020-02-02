@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: d1a4afa31a133470a922902414e4c5f0
 ModelImporter:
+<<<<<<< HEAD
   serializedVersion: 26
   internalIDToNameTable:
   - first:
@@ -266,6 +267,90 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Skin
     second: {fileID: 2100000, guid: 8846497bfc8accb47baeaa39ab9c53d4, type: 2}
+=======
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Character Female
+    100002: //RootNode
+    100004: mixamorig:Head
+    100006: mixamorig:HeadTop_End
+    100008: mixamorig:Hips
+    100010: mixamorig:LeftArm
+    100012: mixamorig:LeftFoot
+    100014: mixamorig:LeftForeArm
+    100016: mixamorig:LeftHand
+    100018: mixamorig:LeftHandIndex1
+    100020: mixamorig:LeftHandIndex2
+    100022: mixamorig:LeftHandIndex3
+    100024: mixamorig:LeftHandIndex4
+    100026: mixamorig:LeftLeg
+    100028: mixamorig:LeftShoulder
+    100030: mixamorig:LeftToe_End
+    100032: mixamorig:LeftToeBase
+    100034: mixamorig:LeftUpLeg
+    100036: mixamorig:Neck
+    100038: mixamorig:RightArm
+    100040: mixamorig:RightFoot
+    100042: mixamorig:RightForeArm
+    100044: mixamorig:RightHand
+    100046: mixamorig:RightHandIndex1
+    100048: mixamorig:RightHandIndex2
+    100050: mixamorig:RightHandIndex3
+    100052: mixamorig:RightHandIndex4
+    100054: mixamorig:RightLeg
+    100056: mixamorig:RightShoulder
+    100058: mixamorig:RightToe_End
+    100060: mixamorig:RightToeBase
+    100062: mixamorig:RightUpLeg
+    100064: mixamorig:Spine
+    100066: mixamorig:Spine1
+    100068: mixamorig:Spine2
+    400000: Character Female
+    400002: //RootNode
+    400004: mixamorig:Head
+    400006: mixamorig:HeadTop_End
+    400008: mixamorig:Hips
+    400010: mixamorig:LeftArm
+    400012: mixamorig:LeftFoot
+    400014: mixamorig:LeftForeArm
+    400016: mixamorig:LeftHand
+    400018: mixamorig:LeftHandIndex1
+    400020: mixamorig:LeftHandIndex2
+    400022: mixamorig:LeftHandIndex3
+    400024: mixamorig:LeftHandIndex4
+    400026: mixamorig:LeftLeg
+    400028: mixamorig:LeftShoulder
+    400030: mixamorig:LeftToe_End
+    400032: mixamorig:LeftToeBase
+    400034: mixamorig:LeftUpLeg
+    400036: mixamorig:Neck
+    400038: mixamorig:RightArm
+    400040: mixamorig:RightFoot
+    400042: mixamorig:RightForeArm
+    400044: mixamorig:RightHand
+    400046: mixamorig:RightHandIndex1
+    400048: mixamorig:RightHandIndex2
+    400050: mixamorig:RightHandIndex3
+    400052: mixamorig:RightHandIndex4
+    400054: mixamorig:RightLeg
+    400056: mixamorig:RightShoulder
+    400058: mixamorig:RightToe_End
+    400060: mixamorig:RightToeBase
+    400062: mixamorig:RightUpLeg
+    400064: mixamorig:Spine
+    400066: mixamorig:Spine1
+    400068: mixamorig:Spine2
+    2100000: Cloth
+    2100002: Belt
+    2100004: Skin
+    2100006: Eye Irs
+    2100008: Eye
+    4300000: Character Female
+    7400000: mixamo.com
+    9500000: //RootNode
+    13700000: Character Female
+  externalObjects: {}
+>>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
   materials:
     importMaterials: 1
     materialName: 0
@@ -296,7 +381,10 @@ ModelImporter:
     - serializedVersion: 16
       name: mixamo.com
       takeName: mixamo.com
+<<<<<<< HEAD
       internalID: 0
+=======
+>>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
       firstFrame: 0
       lastFrame: 499
       wrapMode: 0
@@ -329,7 +417,10 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+<<<<<<< HEAD
     sortHierarchyByName: 1
+=======
+>>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -337,6 +428,7 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+<<<<<<< HEAD
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
@@ -344,12 +436,23 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     meshOptimizationFlags: -1
+=======
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+>>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+<<<<<<< HEAD
+=======
+    previousCalculatedGlobalScale: 0.003
+    hasPreviousCalculatedGlobalScale: 1
+>>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -358,6 +461,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+<<<<<<< HEAD
   referencedClips: []
   importAnimation: 1
   copyAvatar: 0
@@ -766,6 +870,14 @@ ModelImporter:
       position: {x: -0, y: 0.40206948, z: -0.02603112}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
+=======
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+>>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -773,7 +885,10 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+<<<<<<< HEAD
     globalScale: 0.3
+=======
+>>>>>>> 23a1d3f014bf60c862f122e78b1e55a4d72b7d02
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
