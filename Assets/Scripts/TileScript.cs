@@ -14,8 +14,7 @@ public class TileScript : MonoBehaviour
 
     [ConditionalField(nameof(tileType), false, TileType.Conveyor)]
     public Direction direction;
-    [ConditionalField(nameof(tileType), false, TileType.Conveyor)]
-    public GameObject arrowObj;
+
 
     [ConditionalField(nameof(tileType), false, TileType.Barrier)]
     public GameObject barrierObj;
@@ -25,9 +24,12 @@ public class TileScript : MonoBehaviour
     [ConditionalField(nameof(tileType), false, TileType.Switch)]
     public TileScript switchedTile;
 
-    [ConditionalField(nameof(tileType), false, TileType.Goal)]
+    
     public Material goalMaterial;
-
+    public GameObject arrowObj;
+    public ParticleSystem barrierExplodeFX;
+    public ParticleSystem switchFX;
+    public GameObject pitObj;
 
     private void Start()
     {
@@ -35,20 +37,52 @@ public class TileScript : MonoBehaviour
         {
             GameController.instance.tileList.Add(this);
         }
-        
+
+        if (tileType == TileType.Normal)
+        {
+            if (transform.childCount > 0)
+            {
+                Destroy(transform.GetChild(0).gameObject);
+            }
+        }
 
         if (tileType == TileType.Barrier)
         {
-            barrierObj = Instantiate(barrierObj, transform.position + Vector3.up, Quaternion.identity);
-            barrierObj.transform.SetParent ( transform);
+            if(transform.childCount > 0)
+            {
+                barrierObj = transform.GetChild(0).gameObject;
+            }
+            else
+            {
+                barrierObj = Instantiate(barrierObj, transform.position + Vector3.up / 2, Quaternion.identity);
+                barrierObj.transform.SetParent(transform);
+            }
+           
         }
             
         else if (tileType == TileType.Switch)
         {
-            switchObj = Instantiate(switchObj, transform.position + Vector3.up / 2, Quaternion.identity);
-            switchObj.transform.SetParent(transform);
+            if (transform.childCount > 0)
+            {
+                switchObj = transform.GetChild(0).gameObject;
+
+            }
+            else
+            {
+                switchObj = Instantiate(switchObj, transform.position + Vector3.up / 2, Quaternion.identity);
+                switchObj.transform.SetParent(transform);
+            }
+                
         }
-            
+
+      
+        if (transform.childCount > 0) return;
+
+        if (tileType == TileType.Pit)
+        {
+            pitObj = Instantiate(pitObj, transform.position + Vector3.up/2, Quaternion.Euler(new Vector3(0,Random.Range(-180,180),0)));
+            pitObj.transform.SetParent(transform);
+        }
         else if (tileType == TileType.Conveyor)
         {
             arrowObj = Instantiate(arrowObj, transform.position + Vector3.up, Quaternion.identity);
@@ -69,17 +103,11 @@ public class TileScript : MonoBehaviour
         }
         else if (tileType == TileType.Goal)
         {
-            Debug.Log(name);
+//            Debug.Log(name);
             GetComponent<Renderer>().material = goalMaterial;
             
         }
-        else if(tileType == TileType.Normal)
-        {
-            if(transform.childCount >0)
-            {
-                Destroy(transform.GetChild(0).gameObject);
-            }
-        }
+        
     }
 
 
@@ -90,6 +118,7 @@ public class TileScript : MonoBehaviour
         if (barrierObj != null)
         {
             Destroy(barrierObj);
+            Instantiate(barrierExplodeFX, transform.position + Vector3.up, Quaternion.identity);
         }
     }
 
@@ -99,6 +128,7 @@ public class TileScript : MonoBehaviour
 
         if (switchObj != null)
         {
+            Instantiate(switchFX, transform.position + Vector3.up, Quaternion.identity);
             Destroy(switchObj);
         }
     }
